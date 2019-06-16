@@ -1,0 +1,103 @@
+.body {
+  position: relative;
+}
+
+.ai {
+  line-height: 0;
+  text-align: center;
+  background: red
+}
+.ai-img {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.player-choices {
+  text-align: center;
+  padding: 0px
+  
+}
+
+.rps {
+  display: inline-block;
+  margin: 2em;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+}
+
+.rps:hover {
+  transform: scale(1.1)
+}
+
+.pl-answer {
+  text-align: center;
+  margin-top: 2em;
+  visibility: hidden;
+}
+
+.ai-answer {
+  text-align: center;
+  margin-top: 2em;
+  visibility: hidden;
+}
+
+.player {
+  line-height: 0;
+  text-align: center;
+  background: red;
+  
+}
+.player-img {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Small Screens */
+@media screen and (min-width: 260px) {
+  .rps {
+    width: 75px;
+    height: 75px
+  }
+  .ai-img {
+    width: 125px;
+    height: 125px;
+  }
+  .player-img {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+/* Medium Screens */
+@media screen and (min-width: 767px) {
+  .rps {
+    width: 100px;
+    height: 100px;
+  }
+  .ai-img {
+    width: 150px;
+    height: 150px;
+  }
+  .player-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media screen  and (min-width: 1224px) {
+  .rps {
+    width: 150px;
+    height: 150px;
+  }
+  .ai-img {
+    width: 200px;
+    height: 200px;
+  }
+  .player-img {
+    width: 200px;
+    height: 200px;
+  }
+}
