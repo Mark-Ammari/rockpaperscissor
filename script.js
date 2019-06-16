@@ -3,13 +3,14 @@ const player_paper = document.querySelector("#pl-paper")
 const player_scissor = document.querySelector("#pl-scissors")
 
 const ai_img = document.querySelector(".ai-img")
-
+const player_img = document.querySelector(".player-img")
 const ai_answer = document.querySelector(".ai-answer")
 const player_answer = document.querySelector(".pl-answer")
 
 const player_choices = document.querySelector(".player-choices")
 
 const rps = ['rock', 'paper', 'scissor']
+const faces = ['lost', 'thinking', 'win']
 
 player_choices.addEventListener('click', function(e) {
     e.target.style.transform = 'scale(0.9)'
@@ -28,16 +29,22 @@ player_choices.addEventListener('click', function(e) {
     ai_answer.innerHTML = "<img src=" + "./assets/player/" + rps[randomIndex] + ".png" + " />"
     ai_answer.id = rps[randomIndex]
     if (player_answer.id === "pl-rock" && ai_answer.id === "scissor") {
-        console.log("player win")
+        player_img.src = "./assets/ai/win.png"
+        ai_img.src = "./assets/ai/lost.png"
     } else if (player_answer.id === "pl-paper" && ai_answer.id === "rock") {
-        console.log("player win")
+        player_img.src = "./assets/ai/win.png"
+        ai_img.src = "./assets/ai/lost.png"
     } else if (player_answer.id === "pl-scissor" && ai_answer.id === "paper") {
-        console.log("player win")
+        player_img.src = "./assets/ai/win.png"
+        ai_img.src = "./assets/ai/lost.png"
     } else if (player_answer.id.substring(3) === ai_answer.id){
-        console.log("same")
+        player_img.src = "./assets/ai/thinking.png"
+        ai_img.src = "./assets/ai/thinking.png"
     } else {
-        console.log("lost")
+        player_img.src = "./assets/ai/lost.png"
+        ai_img.src = "./assets/ai/win.png"
     } 
+    console.log(player_img.src)
 })
 
 
