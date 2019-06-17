@@ -7,6 +7,9 @@ const player_img = document.querySelector(".player-img")
 const ai_answer = document.querySelector("#ai-answer")
 const player_answer = document.querySelector("#pl-answer")
 
+const result = document.querySelector("#result")
+const resetBtn = document.querySelector("#reset")
+
 const player_choices = document.querySelector(".player-choices")
 
 const scoreboard = document.querySelector(".scoreboard")
@@ -59,19 +62,48 @@ player_choices.addEventListener('click', function(e) {
             cpuScore++
             scoreboard.children[1].innerHTML = cpuScore
         }
+        if (round <= 0 && cpuScore === playerScore) {
+            console.log("tie")
+            result.style.display = "block"
+            result.innerHTML = "TIE"
+            resetBtn.style.display = "block"
+            result.style.color = "black"
+        } else if (round <= 0 && cpuScore < playerScore) {
+            console.log("player win")
+            result.style.display = "block"
+            result.innerHTML = "YOU WIN"
+            result.style.color = "green"
+            resetBtn.style.display = "block"
+        } else if (round <= 0 && cpuScore > playerScore) {
+            console.log("cpu win")
+            result.style.display = "block"
+            result.innerHTML = "YOU LOSE"
+            result.style.color = "red"
+            resetBtn.style.display = "block"
+        }
     }, 1000)
     let randomIndex = Math.floor(Math.random()*3)
     ai_answer.innerHTML = "<img src=" + "./assets/player/" + rps[randomIndex] + ".png" + " />"
     ai_answer.id = rps[randomIndex]
     player_img.src = "./assets/ai/thinking.png"
     ai_img.src = "./assets/ai/thinking.png"
-    if (round <= 0 && cpuScore === playerScore) {
-        console.log("tie")
-    } else if (round <= 0 && cpuScore < playerScore) {
-        console.log("player win")
-    } else if (round <= 0 && cpuScore > playerScore) {
-        console.log("cpu win")
-    }
+})
+
+resetBtn.addEventListener('click', function() {
+    player_answer.innerHTML = "<img />"
+    ai_answer.style.visibility = "hidden"
+    player_answer.style.visibility = "hidden"
+    round = 3
+    cpuScore = 0
+    playerScore = 0
+    player_img.src = "./assets/ai/thinking.png"
+    ai_img.src = "./assets/ai/thinking.png"
+    result.style.display = "none"
+    result.innerHTML = ""
+    result.style.color = ""
+    resetBtn.style.display = "none"
+    scoreboard.children[1].innerHTML = 0
+    scoreboard.children[3].innerHTML = 0
 })
 
 

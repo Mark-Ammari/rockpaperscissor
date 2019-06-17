@@ -1,5 +1,6 @@
 .body {
   position: relative;
+  text-align: center
 }
 
 .ai {
@@ -63,6 +64,30 @@
   display: block;
   text-align: center;
   margin-top: 2em
+}
+
+#result {
+  display: none;
+  text-align: center
+}
+
+#reset {
+  display: none;
+  margin: auto;
+  background: yellow;
+  border: 1px solid black;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 15;
+  font-weight: bold;
+  
+  transition: 500ms
+}
+
+#reset:hover {
+  font-size: 20px
 }
 
 /* Small Screens */
