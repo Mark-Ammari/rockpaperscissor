@@ -5,7 +5,6 @@
 .ai {
   line-height: 0;
   text-align: center;
-  background: red
 }
 .ai-img {
   width: auto;
@@ -15,8 +14,7 @@
 
 .player-choices {
   text-align: center;
-  padding: 0px
-  
+  width: 100%
 }
 
 .rps {
@@ -24,19 +22,14 @@
   margin: 2em;
   cursor: pointer;
   transition: 250ms ease-in-out;
+  padding: 0px;
 }
 
 .rps:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
-.pl-answer {
-  text-align: center;
-  margin-top: 2em;
-  visibility: hidden;
-}
-
-.ai-answer {
+.answers {
   text-align: center;
   margin-top: 2em;
   visibility: hidden;
@@ -44,14 +37,32 @@
 
 .player {
   line-height: 0;
-  text-align: center;
-  background: red;
-  
+  text-align: center;  
 }
 .player-img {
   width: auto;
   height: auto;
   margin: 0 auto;
+}
+
+.score {
+  display: inline;
+  margin-right: 10%;
+  font-size: xx-large
+}
+
+.label {
+  display: inline;
+  margin-left: 10%;
+  font-size: x-large;
+  font-weight: bolder;
+  text-transform: uppercase
+}
+
+.scoreboard {
+  display: block;
+  text-align: center;
+  margin-top: 2em
 }
 
 /* Small Screens */
@@ -68,36 +79,53 @@
     width: 125px;
     height: 125px;
   }
+  .answers img {
+    width: 125px;
+    height: 125px;
+  }
 }
+
 
 /* Medium Screens */
 @media screen and (min-width: 767px) {
   .rps {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
+    margin-right: 4em;
+    margin-left: 4em
   }
   .ai-img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
   }
   .player-img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
+  }
+  .answers img {
+    width: 125px;
+    height: 125px;
   }
 }
 
 /* Desktops and laptops ----------- */
 @media screen  and (min-width: 1224px) {
   .rps {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
+    margin-right: 6em;
+    margin-left: 6em
   }
   .ai-img {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
   }
   .player-img {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
+  }
+  .answers img {
+    width: 125px;
+    height: 125px;
   }
 }
